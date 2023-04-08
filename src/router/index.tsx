@@ -1,24 +1,15 @@
-import Navbar from "@/components/Navbar";
-import { Outlet, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import routes from "./routes";
+import Wrapper from "./Wrapper";
 import "./router.scss";
-import Footer from "@/components/Footer";
-
-const Wrapper = () => {
-  return (
-    <div className="wrapper">
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
 
 const Router = () => {
   return useRoutes(
-    routes.map(({ path, element, children }) => ({
+    routes.map(({ path, element, children, noHeader, name, color }) => ({
       path,
-      element: <Wrapper />,
+      element: (
+        <Wrapper showHeader={!noHeader} headerInfo={{ title: name, color }} />
+      ),
       children: [
         { path, element },
         ...(children || [])?.map((c) => ({

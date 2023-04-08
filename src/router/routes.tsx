@@ -1,3 +1,4 @@
+import colors from "@/config/colors";
 import Home from "@/pages/home";
 import Products from "@/pages/products";
 
@@ -7,10 +8,12 @@ export default [
     name: "Home",
     element: <Home />,
     hideInNavbar: true,
+    noHeader: true,
   },
   {
     path: "/products",
     name: "Productos",
+    color: colors.Orange,
     element: <Products />,
     children: [
       { path: "/totebags", name: "ToteBags", element: <>Tote Bags</> },
@@ -22,6 +25,14 @@ export default [
   {
     path: "/custom",
     name: "Personalizados",
+    color: colors.Purple,
     element: <>Personalizados</>,
+  },
+  {
+    path: "/contact-us",
+    name: "Contactanos",
+    color: colors.LightYellow,
+    element: <>Contactanos</>,
+    hideInNavbar: true,
   },
 ];

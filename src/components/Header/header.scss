@@ -1,0 +1,14 @@
+@import "@/assets/styles/config.scss";
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 138px;
+  margin: 0;
+  border-bottom: 2px solid $black;
+  h2 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+}

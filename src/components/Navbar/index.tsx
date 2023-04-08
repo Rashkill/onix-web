@@ -4,6 +4,7 @@ import OnixLogo from "@/components/icons/onixLogo";
 import routes from "@/router/routes";
 import DropdownList from "./DropdownList";
 import "./navbar.scss";
+import ArrowUpRight from "../icons/arrowUpRight";
 
 const Navbar = () => {
   return (
@@ -27,11 +28,16 @@ const Navbar = () => {
                 }))}
               />
             ) : (
-              <div key={`${r.name}${r.path}`}>
-                <NavLink to={r.path}>{r.name}</NavLink>
-              </div>
+              <NavLink key={`${r.name}${r.path}`} to={r.path}>
+                {r.name}
+              </NavLink>
             )
           )}
+        <NavLink to="/contact-us">
+          <div className="contact-us">
+            Contactanos <ArrowUpRight width={20} />
+          </div>
+        </NavLink>
       </nav>
     </div>
   );
