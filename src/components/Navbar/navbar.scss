@@ -12,6 +12,8 @@
   height: $nav-height;
   width: 100vw;
   background-color: $black;
+
+  z-index: 1000;
   .logo {
     display: flex;
     align-items: center;
@@ -29,11 +31,26 @@
     }
   }
 
-  nav.list ul {
+  .list {
     display: flex;
-    color: white;
     gap: 10px;
-    list-style: none;
-    list-style-type: none;
+    height: 100%;
+    > div {
+      display: flex;
+      align-items: center;
+
+      color: white;
+
+      list-style: none;
+      list-style-type: none;
+      > a {
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+        &.active {
+          color: $lightYellow;
+        }
+      }
+    }
   }
 }

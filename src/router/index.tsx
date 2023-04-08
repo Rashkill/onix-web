@@ -14,10 +14,16 @@ const Wrapper = () => {
 
 const Router = () => {
   return useRoutes(
-    routes.map(({ path, element }) => ({
+    routes.map(({ path, element, children }) => ({
       path,
       element: <Wrapper />,
-      children: [{ path, element }],
+      children: [
+        { path, element },
+        ...(children || [])?.map((c) => ({
+          path: `${path}${c.path}`,
+          element: c.element,
+        })),
+      ],
     }))
   );
 };

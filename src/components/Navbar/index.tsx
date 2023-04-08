@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Logo from "@/assets/icon.png";
 import OnixLogo from "@/components/icons/onixLogo";
 import routes from "@/router/routes";
+import DropdownList from "../DropdownList";
 import "./navbar.scss";
 
 const Navbar = () => {
@@ -12,15 +13,25 @@ const Navbar = () => {
         <OnixLogo className="letters" />
       </NavLink>
       <nav className="list">
-        <ul>
-          {routes
-            .filter((r) => !r.hideInNavbar)
-            .map((r) => (
-              <li key={`${r.name}${r.path}`}>
+        {routes
+          .filter((r) => !r.hideInNavbar)
+          .map((r) =>
+            (r.children || []).length > 0 ? (
+              <DropdownList
+                key={`${r.name}${r.path}`}
+                title={r.name}
+                to={r.path}
+                options={r.children?.map(({ name, path }) => ({
+                  name,
+                  to: `${r.path}${path}`,
+                }))}
+              />
+            ) : (
+              <div key={`${r.name}${r.path}`}>
                 <NavLink to={r.path}>{r.name}</NavLink>
-              </li>
-            ))}
-        </ul>
+              </div>
+            )
+          )}
       </nav>
     </div>
   );

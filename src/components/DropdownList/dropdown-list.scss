@@ -1,0 +1,42 @@
+@import "@/assets/styles/config.scss";
+div .dropdown-list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  .title {
+    display: flex;
+    align-items: center;
+    p {
+      color: white;
+      font-weight: bold;
+      margin: 0;
+    }
+    &.active p {
+      color: $lightYellow !important;
+    }
+  }
+  > ul {
+    position: absolute;
+    width: 250%;
+    top: $nav-height - 2px;
+    background-color: white;
+    list-style: none;
+    list-style-type: none;
+
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    border: 2px $black solid;
+    border-radius: 0 0 24px 24px;
+    > li {
+      margin: 25px 5px;
+      text-align: center;
+      a {
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}
