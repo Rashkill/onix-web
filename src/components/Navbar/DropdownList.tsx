@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "./dropdown-list.scss";
-import ChevronDown from "../icons/chevronDown";
+
+import ChevronDown from "@/components/icons/chevronDown";
 import { useState } from "react";
 
 type DropdownListProps = {

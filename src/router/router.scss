@@ -1,5 +1,9 @@
 @import "@/assets/styles/config.scss";
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: $nav-height;
+  min-height: calc(100vh - $nav-height);
 }

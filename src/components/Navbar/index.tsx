@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "@/assets/icon.png";
 import OnixLogo from "@/components/icons/onixLogo";
 import routes from "@/router/routes";
-import DropdownList from "../DropdownList";
+import DropdownList from "./DropdownList";
 import "./navbar.scss";
 
 const Navbar = () => {

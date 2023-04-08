@@ -1,18 +1,4 @@
 @font-face {
   font-family: "ClashDisplay";
-  font-weight: normal;
-  font-style: normal;
-  src: url("./ClashDisplay/ClashDisplay-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "ClashDisplay";
-  font-weight: bold;
-  font-style: normal;
-  src: url("./ClashDisplay/ClashDisplay-Semibold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "ClashDisplay";
-  font-weight: 600;
-  font-style: normal;
-  src: url("./ClashDisplay/ClashDisplay-bold.ttf") format("truetype");
+  src: url("./ClashDisplay/ClashDisplay-Variable.ttf") format("truetype");
 }

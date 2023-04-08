@@ -2,12 +2,14 @@ import Navbar from "@/components/Navbar";
 import { Outlet, useRoutes } from "react-router-dom";
 import routes from "./routes";
 import "./router.scss";
+import Footer from "@/components/Footer";
 
 const Wrapper = () => {
   return (
     <div className="wrapper">
       <Navbar />
       <Outlet />
+      <Footer />
     </div>
   );
 };
