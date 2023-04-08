@@ -1,2 +1,4 @@
 # onix-web
-Web de onix en ReactJS sobre VITE
+
+Web de la pagina de Onix
+Hecho en ReactJS con VITE en Typescript
