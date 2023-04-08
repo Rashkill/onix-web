@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "@/assets/icon.png";
 import OnixLogo from "@/components/icons/onixLogo";
 import routes from "@/router/routes";

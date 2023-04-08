@@ -22,7 +22,11 @@ const DropdownList: React.FC<DropdownListProps> = ({
       onMouseEnter={() => setShowList(true)}
       onMouseLeave={() => setShowList(false)}
     >
-      <NavLink className="title" to={to || "#"}>
+      <NavLink
+        className="title"
+        to={to || "#"}
+        onClick={() => setShowList(false)}
+      >
         <p>{title}</p>
         <ChevronDown style={{ pointerEvents: "none" }} />
       </NavLink>
@@ -31,7 +35,9 @@ const DropdownList: React.FC<DropdownListProps> = ({
         <ul>
           {options.map((o) => (
             <li key={`${o.name}${o.to}`}>
-              <NavLink to={o.to || "#"}>{o.name}</NavLink>
+              <NavLink to={o.to || "#"} onClick={() => setShowList(false)}>
+                {o.name}
+              </NavLink>
             </li>
           ))}
         </ul>

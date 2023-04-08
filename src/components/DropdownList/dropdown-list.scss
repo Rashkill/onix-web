@@ -13,9 +13,6 @@ div .dropdown-list {
       font-weight: bold;
       margin: 0;
     }
-    &.active p {
-      color: $lightYellow !important;
-    }
   }
   > ul {
     position: absolute;
@@ -31,9 +28,13 @@ div .dropdown-list {
     border: 2px $black solid;
     border-radius: 0 0 24px 24px;
     > li {
+      display: flex;
+      position: relative;
       margin: 25px 5px;
       text-align: center;
       a {
+        flex: 1;
+        width: 100px;
         color: black;
         font-weight: bold;
       }
