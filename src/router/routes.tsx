@@ -35,4 +35,11 @@ export default [
     element: <>Contactanos</>,
     hideInNavbar: true,
   },
+  {
+    path: "*",
+    name: "Error404",
+    element: <>Error 404</>,
+    hideInNavbar: true,
+    noHeader: true,
+  },
 ];
