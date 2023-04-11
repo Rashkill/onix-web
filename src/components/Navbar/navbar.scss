@@ -110,4 +110,7 @@
     pointer-events: none;
     color: $lightYellow !important;
   }
+  .dropdown-list .active :not(ul) {
+    pointer-events: all;
+  }
 }
