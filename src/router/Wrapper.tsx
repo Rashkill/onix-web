@@ -13,7 +13,9 @@ const Wrapper: React.FC<{
       {showHeader && headerInfo && (
         <Header title={headerInfo.title} color={headerInfo.color} />
       )}
-      <Outlet />
+      <div style={{ display: "flex", flex: 1 }}>
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

@@ -7,11 +7,12 @@
   padding: 0 40px;
   box-sizing: border-box;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   height: $nav-height;
   width: 100vw;
   background-color: $black;
+  border-bottom: 2px solid $black;
 
   z-index: 1000;
   .logo {
@@ -72,7 +73,7 @@
     }
     > ul {
       position: absolute;
-      width: 250%;
+      width: 220%;
       top: $nav-height - 2px;
       background-color: white;
       list-style: none;

@@ -29,7 +29,7 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <img className="plant" src={OnixPlant} />
+        <img className="plant" src={OnixPlant} draggable={false} />
       </div>
     </footer>
   );

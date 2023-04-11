@@ -1,0 +1,24 @@
+@import "@/assets/styles/config.scss";
+.contact-us {
+  position: relative;
+  display: flex;
+  flex: 1;
+  > form.form {
+    width: min(50%, 840px);
+    min-width: 600px;
+    height: 1000px;
+    background-color: $lightYellow;
+    border-right: 2px solid $black;
+  }
+  .decoration-wrapper {
+    position: relative;
+
+    .decoration {
+      position: absolute;
+      width: 200px;
+      bottom: -10px;
+      left: -20px;
+      z-index: 100;
+    }
+  }
+}
