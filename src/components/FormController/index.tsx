@@ -7,6 +7,8 @@ import {
   Merge,
 } from "react-hook-form";
 
+import "./form-controller.scss";
+
 type FormControllerProps = {
   name: string;
   label?: string;
@@ -24,12 +26,12 @@ const FormController: React.FC<FormControllerProps> = ({
   ...props
 }) => {
   return (
-    <>
+    <div className="form-controller">
       <label htmlFor={name}>{label || name}</label>
       <Controller defaultValue={defaultValue || ""} name={name} {...props} />
       <small>{helperText}</small>
       <small>{error?.message}</small>
-    </>
+    </div>
   );
 };
 

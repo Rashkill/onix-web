@@ -4,6 +4,9 @@
   display: flex;
   flex: 1;
   > form.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: min(50%, 840px);
     min-width: 600px;
     background-color: $lightYellow;
@@ -12,6 +15,10 @@
     > .title {
       font-weight: 600;
       width: 300px;
+    }
+    > .row {
+      display: flex;
+      gap: 40px;
     }
   }
   .decoration-wrapper {

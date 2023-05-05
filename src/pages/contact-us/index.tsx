@@ -13,11 +13,39 @@ const ContactUs = () => {
         <h3 className="title">
           Dejanos un mensaje y nos pondremos en contacto!
         </h3>
+        <div className="row">
+          <FormController
+            name="name"
+            label="Nombre"
+            control={control}
+            render={({ field }) => <input {...field} />}
+          />
+          <FormController
+            name="lastName"
+            label="Apellido"
+            control={control}
+            render={({ field }) => <input {...field} />}
+          />
+        </div>
+        <div className="row">
+          <FormController
+            name="phone"
+            label="Teléfono"
+            control={control}
+            render={({ field }) => <input {...field} />}
+          />
+          <FormController
+            name="email"
+            label="E-mail"
+            control={control}
+            render={({ field }) => <input {...field} />}
+          />
+        </div>
         <FormController
-          name="name"
-          label="Nombre"
+          name="message"
+          label="Mensaje"
           control={control}
-          render={({ field }) => <input {...field} />}
+          render={({ field }) => <textarea {...field} />}
         />
       </form>
       <div className="decoration-wrapper">
