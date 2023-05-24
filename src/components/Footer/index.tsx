@@ -1,6 +1,5 @@
 import OnixPlant from "@/assets/plant.png";
 import Instagram from "@/components/icons/instagram";
-import Phone from "@/components/icons/phone";
 import Email from "@/components/icons/email";
 
 const Footer = () => {
@@ -16,11 +15,11 @@ const Footer = () => {
               <Instagram width={16} /> @onix_ar
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="callto:342-1234567">
               <Phone width={16} /> 342-1234567 (wpp)
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="mailto:onixar.tienda@gmail.com">
               <Email width={16} /> onixar.tienda@gmail.com
