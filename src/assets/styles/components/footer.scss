@@ -34,3 +34,18 @@ footer.footer {
     bottom: -2px;
   }
 }
+
+@media (max-width: 600px) {
+  footer.footer {
+    .contact-box {
+      max-width: unset;
+      width: 100%;
+      padding: 10px 25px;
+      border: none;
+      border-top: 3px solid $black;
+    }
+    .plant {
+      right: -90px;
+    }
+  }
+}

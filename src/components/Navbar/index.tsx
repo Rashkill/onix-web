@@ -8,6 +8,7 @@ import ArrowUpRight from "@/components/icons/arrowUpRight";
 import routes from "@/router/routes";
 
 import DropdownList from "./DropdownList";
+import BurgerMenuIcon from "../icons/burgerMenu";
 
 const Navbar = () => {
   const buttons = useMemo(() => {
@@ -29,13 +30,13 @@ const Navbar = () => {
         if (r.alt)
           return (
             <NavLink key={`${r.name}${r.path}`} to={r.path}>
-              <div className="contact-us">
+              <div className="contact-us-button">
                 {r.name} <ArrowUpRight width={20} />
               </div>
             </NavLink>
           );
         return (
-          <NavLink key={`${r.name}${r.path}`} to={r.path}>
+          <NavLink key={`${r.name}${r.path}`} to={r.path} className="navlink">
             {r.name}
           </NavLink>
         );
@@ -48,6 +49,7 @@ const Navbar = () => {
         <img src={Logo} draggable={false} />
         <OnixLogo className="letters" />
       </NavLink>
+      <BurgerMenuIcon color="white" className="burger-icon" />
       <nav className="list">{buttons}</nav>
     </div>
   );

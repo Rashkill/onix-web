@@ -13,6 +13,9 @@
   border-bottom: 2px solid $black;
 
   z-index: 1000;
+  .burger-icon {
+    display: none;
+  }
   .logo {
     display: flex;
     align-items: center;
@@ -46,10 +49,11 @@
       font-weight: 500;
       font-size: 17px;
     }
-    .contact-us {
+    .contact-us-button {
       display: flex;
       align-items: center;
       height: 100%;
+      flex: 1;
       padding: 10px;
       box-sizing: border-box;
       background-color: $lightYellow;
@@ -110,5 +114,36 @@
   }
   .dropdown-list .active :not(ul) {
     pointer-events: all;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    .burger-icon {
+      display: block;
+    }
+    .list {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      background-color: $black;
+      top: $nav-height;
+      left: 0;
+      width: 100%;
+      height: fit-content;
+      > .navlink {
+        padding: 0 10px;
+        flex: 1;
+      }
+      .dropdown-list .title {
+        width: 100%;
+        padding: 0 10px;
+      }
+      .contact-us-button {
+        padding: 24px 10px;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
   }
 }
