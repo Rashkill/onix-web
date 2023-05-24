@@ -8,7 +8,6 @@ import ArrowUpRight from "@/components/icons/arrowUpRight";
 import routes from "@/router/routes";
 
 import DropdownList from "./DropdownList";
-import "./navbar.scss";
 
 const Navbar = () => {
   const buttons = useMemo(() => {

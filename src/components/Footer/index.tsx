@@ -3,8 +3,6 @@ import Instagram from "@/components/icons/instagram";
 import Phone from "@/components/icons/phone";
 import Email from "@/components/icons/email";
 
-import "./footer.scss";
-
 const Footer = () => {
   return (
     <footer className="footer">
