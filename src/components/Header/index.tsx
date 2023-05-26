@@ -2,8 +2,6 @@ import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import routes from "@/router/routes";
 
-import "./header.scss";
-
 const Header: React.FC<{ title: string; color?: string }> = ({
   title,
   color,

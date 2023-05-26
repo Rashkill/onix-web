@@ -1,8 +1,8 @@
-@import "@/assets/styles/config.scss";
 .contact-us {
   position: relative;
   display: flex;
   flex: 1;
+  width: 100vw;
   > form.form {
     display: flex;
     flex-direction: column;
@@ -30,6 +30,24 @@
       bottom: -10px;
       left: -20px;
       z-index: 100;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-us {
+    > form.form {
+      flex-direction: column;
+      width: 100vw;
+      box-sizing: border-box;
+      min-width: unset;
+      > .row {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+    .decoration-wrapper {
+      display: none;
     }
   }
 }

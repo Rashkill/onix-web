@@ -1,0 +1,65 @@
+button {
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #202020;
+  border-radius: 40px;
+
+  font-weight: 500;
+  font-size: 18px;
+
+  padding: 10px 25px;
+  margin: 10px;
+  min-width: 80px;
+  margin-bottom: 20px;
+
+  font-family: "ClashDisplay", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+
+  transition: all 0.2s ease;
+}
+
+button[color="primary"] {
+  color: #fefefe;
+  background-color: #202020;
+}
+button[color="primary"]:hover {
+  background-color: #d4bcf6;
+  border-color: #d4bcf6;
+}
+button[color="primary"]:active {
+  background-color: #9b6ce1;
+  border-color: #9b6ce1;
+  transition: all 0.1s ease;
+}
+
+button[color="secondary"] {
+  color: #202020;
+  background-color: #fefefe;
+}
+button[color="secondary"]:hover {
+  background-color: #d4bcf6;
+}
+button[color="secondary"]:active {
+  background-color: #202020;
+  color: #fefefe;
+  transition: all 0.1s ease;
+}
+button.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+button.btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0;
+  min-width: 40px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  > * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

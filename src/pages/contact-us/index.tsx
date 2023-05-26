@@ -3,13 +3,11 @@ import FormController from "@/components/FormController";
 
 import { useForm } from "react-hook-form";
 
-import "./contact-us.scss";
-
 const ContactUs = () => {
   const { control } = useForm();
   return (
     <div className="contact-us">
-      <form className="form">
+      <form className="form" onSubmit={(e) => e.preventDefault()}>
         <h3 className="title">
           Dejanos un mensaje y nos pondremos en contacto!
         </h3>
@@ -47,6 +45,7 @@ const ContactUs = () => {
           control={control}
           render={({ field }) => <textarea {...field} />}
         />
+        <button color="primary">Enviar</button>
       </form>
       <div className="decoration-wrapper">
         <img className="decoration" src={OnixDecoration3} draggable={false} />

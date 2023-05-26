@@ -7,8 +7,6 @@ import {
   Merge,
 } from "react-hook-form";
 
-import "./form-controller.scss";
-
 type FormControllerProps = {
   name: string;
   label?: string;

@@ -1,3 +1,16 @@
+@import "@/assets/styles/config.scss";
+
+// COMPONENTS
+@import "@/assets/styles/components/navbar.scss";
+@import "@/assets/styles/components/footer.scss";
+@import "@/assets/styles/components/header.scss";
+@import "@/assets/styles/components/button.scss";
+@import "@/assets/styles/components/dropdown-list.scss";
+@import "@/assets/styles/components/form-controller.scss";
+
+// PAGES
+@import "@/assets/styles/pages/contact-us.scss";
+
 :root {
   font-family: "ClashDisplay", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;

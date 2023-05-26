@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import Logo from "@/assets/icon.png";
@@ -8,9 +8,10 @@ import ArrowUpRight from "@/components/icons/arrowUpRight";
 import routes from "@/router/routes";
 
 import DropdownList from "./DropdownList";
-import "./navbar.scss";
+import BurgerMenuIcon from "../icons/burgerMenu";
 
 const Navbar = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
   const buttons = useMemo(() => {
     return routes
       .filter((r) => !r.hideInNavbar)
@@ -25,18 +26,28 @@ const Navbar = () => {
                 name,
                 to: `${r.path}${path}`,
               }))}
+              onClick={() => setMenuVisible(false)}
             />
           );
         if (r.alt)
           return (
-            <NavLink key={`${r.name}${r.path}`} to={r.path}>
-              <div className="contact-us">
+            <NavLink
+              key={`${r.name}${r.path}`}
+              to={r.path}
+              onClick={() => setMenuVisible(false)}
+            >
+              <div className="contact-us-button">
                 {r.name} <ArrowUpRight width={20} />
               </div>
             </NavLink>
           );
         return (
-          <NavLink key={`${r.name}${r.path}`} to={r.path}>
+          <NavLink
+            key={`${r.name}${r.path}`}
+            to={r.path}
+            className="navlink"
+            onClick={() => setMenuVisible(false)}
+          >
             {r.name}
           </NavLink>
         );
@@ -44,13 +55,25 @@ const Navbar = () => {
   }, [routes]);
 
   return (
-    <div className="navbar">
-      <NavLink to="/" className="logo">
-        <img src={Logo} draggable={false} />
-        <OnixLogo className="letters" />
-      </NavLink>
-      <nav className="list">{buttons}</nav>
-    </div>
+    <>
+      <div
+        className={`navbar-backdrop${menuVisible ? " visible" : ""}`}
+        onClick={() => setMenuVisible(false)}
+      />
+      <div className="navbar">
+        <NavLink to="/" className="logo">
+          <img src={Logo} draggable={false} />
+          <OnixLogo className="letters" />
+        </NavLink>
+        <button
+          className="btn-icon burger-icon"
+          onClick={() => setMenuVisible((prev) => !prev)}
+        >
+          <BurgerMenuIcon color="white" />
+        </button>
+        <nav className={`list${menuVisible ? " visible" : ""}`}>{buttons}</nav>
+      </div>
+    </>
   );
 };
 
