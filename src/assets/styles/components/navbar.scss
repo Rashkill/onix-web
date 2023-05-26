@@ -1,3 +1,13 @@
+.navbar-backdrop {
+  position: fixed;
+  display: none;
+  background-color: #00000079;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 900;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -13,8 +23,9 @@
   border-bottom: 2px solid $black;
 
   z-index: 1000;
+
   .burger-icon {
-    display: none;
+    visibility: hidden;
   }
   .logo {
     display: flex;
@@ -118,12 +129,22 @@
 }
 
 @media (max-width: 600px) {
+  .navbar-backdrop {
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    &.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
   .navbar {
+    transform-style: preserve-3d;
     .burger-icon {
-      display: block;
+      visibility: visible;
     }
     .list {
-      display: none;
       position: absolute;
       flex-direction: column;
       background-color: $black;
@@ -143,6 +164,14 @@
         padding: 24px 10px;
         justify-content: center;
         font-weight: bold;
+      }
+
+      transform: translateY(-100%) translateZ(-10px);
+      transition: all 0.5s ease;
+      pointer-events: none;
+      &.visible {
+        pointer-events: auto;
+        transform: translateY(0);
       }
     }
   }

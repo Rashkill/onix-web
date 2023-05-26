@@ -48,3 +48,18 @@ button.disabled {
   pointer-events: none;
   opacity: 0.6;
 }
+
+button.btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0;
+  min-width: 40px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  > * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

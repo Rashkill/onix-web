@@ -8,12 +8,14 @@ type DropdownListProps = {
   to: string;
   options?: { name: string; to: string }[];
   active?: boolean;
+  onClick?: () => void;
 };
 
 const DropdownList: React.FC<DropdownListProps> = ({
   title,
   to,
   options = [],
+  onClick,
 }) => {
   const [showList, setShowList] = useState(false);
   return (
@@ -21,6 +23,7 @@ const DropdownList: React.FC<DropdownListProps> = ({
       className="dropdown-list"
       onMouseEnter={() => setShowList(true)}
       onMouseLeave={() => setShowList(false)}
+      onClick={onClick}
     >
       <NavLink
         className="title"
