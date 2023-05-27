@@ -1,0 +1,17 @@
+.home-page {
+  > header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 50px 10%;
+    border-bottom: 2px solid $black;
+    background-color: lighten($color: $pink, $amount: 32);
+    text-align: justify;
+    > h1,
+    h2 {
+      margin: 0;
+    }
+  }
+}

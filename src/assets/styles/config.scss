@@ -5,3 +5,11 @@ $nav-height: 62px;
 $black: #202020;
 $lightYellow: #ffdd9e;
 $pink: #9b6ce1;
+
+[color="pink"] {
+  color: $pink;
+}
+
+[color="lightYellow"] {
+  color: $lightYellow;
+}
