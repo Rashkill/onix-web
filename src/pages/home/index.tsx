@@ -1,3 +1,5 @@
+import ProductCard from "@/components/ProductCard";
+import img from "@/assets/logo.png";
 const Home = () => {
   return (
     <div className="home-page">
@@ -16,6 +18,19 @@ const Home = () => {
           <button color="secondary">Pedí tu personalizado</button>
         </div>
       </header>
+      <h2>Explorá nuestros productos</h2>
+      <div className="products">
+        <ProductCard>
+          <h3>Stickers</h3>
+        </ProductCard>
+        <ProductCard>
+          <h3>ToteBags</h3>
+        </ProductCard>
+        <ProductCard>
+          <h3>Posters & Postcards</h3>
+        </ProductCard>
+      </div>
+      <button color="primary">Ver Catálogo Completo</button>
     </div>
   );
 };
