@@ -19,7 +19,13 @@ const DropdownList: React.FC<DropdownListProps> = ({
 }) => {
   const [showList, setShowList] = useState(false);
   return (
-    <div className="dropdown-list" onMouseLeave={() => setShowList(false)}>
+    <div
+      className="dropdown-list"
+      onMouseEnter={() =>
+        !window.matchMedia("(max-width: 600px)").matches && setShowList(true)
+      }
+      onMouseLeave={() => setShowList(false)}
+    >
       <NavLink
         className="title"
         to={to || "#"}
@@ -34,14 +40,6 @@ const DropdownList: React.FC<DropdownListProps> = ({
         <ChevronDown
           style={{
             margin: "0 2px",
-            pointerEvents: window.matchMedia("(max-width: 600px)").matches
-              ? "none"
-              : "auto",
-          }}
-          onClick={(e) => {
-            if (!window.matchMedia("(max-width: 600px)").matches)
-              e.preventDefault();
-            setShowList((prev) => !prev);
           }}
         />
       </NavLink>

@@ -13,6 +13,9 @@
     border-bottom: 2px solid $black;
     background-color: lighten($color: $pink, $amount: 32);
     text-align: justify;
+    > .buttons {
+      display: flex;
+    }
     > h1,
     h2 {
       margin: 0;
@@ -24,5 +27,16 @@
     justify-content: center;
     gap: 10px;
     margin: 10px 0;
+  }
+}
+@media (max-width: 600px) {
+  .home-page {
+    > header {
+      padding: 30px;
+      text-align: center;
+      > .buttons {
+        flex-direction: column;
+      }
+    }
   }
 }

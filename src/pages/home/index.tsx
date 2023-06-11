@@ -1,6 +1,7 @@
 import ProductCard from "@/components/ProductCard";
 import img from "@/assets/decoration_3.png";
 import { useNavigate } from "react-router-dom";
+import routes from "@/router/routes";
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -15,24 +16,28 @@ const Home = () => {
           <b>100% originales</b> y dar a conocer nuestro arte. NO ofrecemos
           servicios de imprenta ni venta mayorista
         </p>
-        <div>
+        <div className="buttons">
           <button color="primary">Contactanos</button>
           <button color="secondary">Pedí tu personalizado</button>
         </div>
       </header>
       <h2>Explorá nuestros productos</h2>
       <div className="products">
-        <ProductCard img={img} onClick={() => navigate("/products/stickers")}>
-          <h3>Stickers</h3>
-        </ProductCard>
-        <ProductCard>
-          <h3>ToteBags</h3>
-        </ProductCard>
-        <ProductCard>
-          <h3>Posters & Postcards</h3>
-        </ProductCard>
+        {routes
+          .find((r) => r.name === "Productos")
+          ?.children?.map((p) => (
+            <ProductCard
+              key={p.path}
+              img={p.img}
+              onClick={() => navigate(`/products${p.path}`)}
+            >
+              <h3>{p.name}</h3>
+            </ProductCard>
+          ))}
       </div>
-      <button color="primary">Ver Catálogo Completo</button>
+      <button color="primary" onClick={() => navigate("/products")}>
+        Ver Catálogo Completo
+      </button>
     </div>
   );
 };

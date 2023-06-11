@@ -46,6 +46,11 @@ body {
   scrollbar-width: none;
 }
 
+textarea,
+input {
+  font-family: "ClashDisplay", Inter, system-ui, Avenir, Helvetica, Arial;
+}
+
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   height: 10px;
