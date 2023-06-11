@@ -1,6 +1,8 @@
 import ProductCard from "@/components/ProductCard";
-import img from "@/assets/logo.png";
+import img from "@/assets/decoration_3.png";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="home-page">
       <header>
@@ -20,7 +22,7 @@ const Home = () => {
       </header>
       <h2>Explorá nuestros productos</h2>
       <div className="products">
-        <ProductCard>
+        <ProductCard img={img} onClick={() => navigate("/products/stickers")}>
           <h3>Stickers</h3>
         </ProductCard>
         <ProductCard>

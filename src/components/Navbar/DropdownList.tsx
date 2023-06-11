@@ -24,12 +24,26 @@ const DropdownList: React.FC<DropdownListProps> = ({
         className="title"
         to={to || "#"}
         onClick={(e) => {
-          e.preventDefault();
-          setShowList((prev) => !prev);
+          if (window.matchMedia("(max-width: 600px)").matches) {
+            e.preventDefault();
+            setShowList((prev) => !prev);
+          }
         }}
       >
         <p>{title}</p>
-        <ChevronDown style={{ pointerEvents: "none" }} />
+        <ChevronDown
+          style={{
+            margin: "0 2px",
+            pointerEvents: window.matchMedia("(max-width: 600px)").matches
+              ? "none"
+              : "auto",
+          }}
+          onClick={(e) => {
+            if (!window.matchMedia("(max-width: 600px)").matches)
+              e.preventDefault();
+            setShowList((prev) => !prev);
+          }}
+        />
       </NavLink>
 
       <ul className={showList ? "visible" : ""}>
