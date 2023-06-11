@@ -19,17 +19,29 @@ const DropdownList: React.FC<DropdownListProps> = ({
 }) => {
   const [showList, setShowList] = useState(false);
   return (
-    <div className="dropdown-list" onMouseLeave={() => setShowList(false)}>
+    <div
+      className="dropdown-list"
+      onMouseEnter={() =>
+        !window.matchMedia("(max-width: 600px)").matches && setShowList(true)
+      }
+      onMouseLeave={() => setShowList(false)}
+    >
       <NavLink
         className="title"
         to={to || "#"}
         onClick={(e) => {
-          e.preventDefault();
-          setShowList((prev) => !prev);
+          if (window.matchMedia("(max-width: 600px)").matches) {
+            e.preventDefault();
+            setShowList((prev) => !prev);
+          }
         }}
       >
         <p>{title}</p>
-        <ChevronDown style={{ pointerEvents: "none" }} />
+        <ChevronDown
+          style={{
+            margin: "0 2px",
+          }}
+        />
       </NavLink>
 
       <ul className={showList ? "visible" : ""}>

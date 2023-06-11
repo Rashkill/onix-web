@@ -3,6 +3,10 @@ import ContactUs from "@/pages/contact-us";
 import Home from "@/pages/home";
 import Products from "@/pages/products";
 
+import StickersImg from "@/assets/products/Stickers.png";
+import ToteBagsImg from "@/assets/products/Totebags.png";
+import PostersAndPostcardsImg from "@/assets/products/PostersAndPostcards.png";
+
 export default [
   {
     path: "/",
@@ -17,10 +21,24 @@ export default [
     color: colors.Orange,
     element: <Products />,
     children: [
-      { path: "/totebags", name: "Tote Bags", element: <>Tote Bags</> },
-      { path: "/stickers", name: "Stickers", element: <>Stickers</> },
-      { path: "/posters", name: "Posters", element: <>Posters</> },
-      { path: "/postcards", name: "Postcards", element: <>Postcards</> },
+      {
+        path: "/totebags",
+        name: "Tote Bags",
+        img: ToteBagsImg,
+        element: <>Tote Bags</>,
+      },
+      {
+        path: "/stickers",
+        name: "Stickers",
+        img: StickersImg,
+        element: <>Stickers</>,
+      },
+      {
+        path: "/posters-postcards",
+        name: "Posters & Postcards",
+        img: PostersAndPostcardsImg,
+        element: <>Posters and Postcards</>,
+      },
     ],
   },
   {

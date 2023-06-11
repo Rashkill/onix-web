@@ -1,0 +1,42 @@
+.home-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 50px max(20%, 10px);
+    border-bottom: 2px solid $black;
+    background-color: lighten($color: $pink, $amount: 32);
+    text-align: justify;
+    > .buttons {
+      display: flex;
+    }
+    > h1,
+    h2 {
+      margin: 0;
+    }
+  }
+  > .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 600px) {
+  .home-page {
+    > header {
+      padding: 30px;
+      text-align: center;
+      > .buttons {
+        flex-direction: column;
+      }
+    }
+  }
+}
